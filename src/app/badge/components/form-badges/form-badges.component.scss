@@ -1,0 +1,10 @@
+.form-group {
+    position: relative;
+}
+
+.valid-feedback, .invalid-feedback {
+    right: 35px;
+    position: absolute;
+    top: 6px;
+    width: auto;
+}

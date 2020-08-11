@@ -1,0 +1,16 @@
+<div 
+    class="card .bg-white" 
+    style="margin: 10 auto;"
+    *ngFor="let item of iterar"
+>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                <ngx-skeleton-loader style="height: 100px;" count="1" animation="progress-dark" appearance="circle"></ngx-skeleton-loader>
+            </div>
+            <div class="col-10">
+                <ngx-skeleton-loader count="3" animation="progress-dark"></ngx-skeleton-loader>
+            </div>
+        </div>
+    </div>
+</div>

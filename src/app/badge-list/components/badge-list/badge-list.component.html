@@ -1,0 +1,24 @@
+<a [routerLink]="['/detail', _id]">
+    <li>
+        <div class="d-flex align-items-center">
+            <div>
+                <img 
+                    class="avatar"
+                    src="https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon" 
+                    alt="graver"
+                >
+            </div>
+            <div class="ml-3">
+                <b class="font-weight-bold">
+                    {{name}} {{lastName}}
+                </b>
+                <div>
+                    @{{twitter}}
+                </div>
+                <p>
+                    {{job}}
+                </p>
+            </div>
+        </div>
+    </li>
+</a>

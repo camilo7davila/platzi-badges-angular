@@ -1,0 +1,35 @@
+<section>
+    <div class="BadgeNew__hero">
+        <img src="../../../../assets/images/platziconf-logo.svg" alt="logo">
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <app-badge
+                    [name]="user.name || 'Name'"
+                    [lastName]="user.lastName || 'lastName'"
+                    [email]="user.email || 'example@gmail.com'"
+                    [job]="user.job || 'Job Title'"
+                    [twitter]="user.twitter || 'Account-twitter'"
+                ></app-badge>
+            </div>
+            <div class="col-md-6" style="position: relative;">
+                <ng-container *ngIf="!isLoading">
+                    <app-form-badges
+                        [name]="user.name"
+                        [lastName]="user.lastName"
+                        [email]="user.email"
+                        [job]="user.job"
+                        [twitter]="user.twitter"
+                        [isEditing]="isEditing"
+                        (handleChangeForm)="handleChangeForm($event)"
+                        (handleSaveData)="handleSaveData($event)"
+                    ></app-form-badges>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,170 @@
+<div class="card animate__animated animate__fadeInRight" style="position: absolute; width: 100%; top: -100px; height: 480px;">
+    <div class="card-body">
+        <form
+            [formGroup]="form"
+            (ngSubmit)="handleSave()"
+            style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;"
+        >
+            <h1>New Attendant</h1>
+            <div class="form-group">
+                <input 
+                    type="text"
+                    name="name"
+                    placeholder="First Name"
+                    class="form-control"
+                    formControlName="name"
+                    autocomplete="off"
+                    (input)="handleChange()"
+                    [ngClass]="{
+                                'is-invalid': nameField.errors && nameField.dirty   ,
+                                'is-valid': nameField.valid
+                            }"
+                >
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="nameField.hasError('required')"
+                >
+                    Name is required
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="nameField.hasError('minlength')"
+                >
+                    Minimun 3 spaces
+                </div>
+            </div>
+            <div class="form-group ">
+                <input 
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    class="form-control"
+                    formControlName="lastName"
+                    autocomplete="off"
+                    (input)="handleChange()"
+                    [ngClass]="{
+                        'is-invalid': lastNameField.errors && lastNameField.dirty   ,
+                        'is-valid': lastNameField.valid
+                        }"
+                >
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="lastNameField.hasError('required')"
+                >
+                    Name is required
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="lastNameField.hasError('minlength')"
+                >
+                    Minimun 4 spaces
+                </div>
+            </div>
+            <div class="form-group ">
+                <input 
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    class="form-control"
+                    formControlName="email"
+                    autocomplete="off"
+                    (input)="handleChange()"
+                    [ngClass]="{
+                        'is-invalid': emailField.errors && emailField.dirty   ,
+                        'is-valid': emailField.valid
+                        }"
+                >
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="emailField.hasError('required')"
+                >
+                    Email is required
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="emailField.hasError('pattern')"
+                >
+                    Please provider a valid email
+                </div>
+            </div>
+            <div class="form-group ">
+                <input 
+                    type="text"
+                    name="job"
+                    placeholder="Job Title"
+                    class="form-control"
+                    formControlName="job"
+                    autocomplete="off"
+                    (input)="handleChange()"
+                    [ngClass]="{
+                        'is-invalid': jobField.errors && jobField.dirty   ,
+                        'is-valid': jobField.valid
+                        }"
+                >
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="jobField.hasError('required')"
+                >
+                    Email is required
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="jobField.hasError('minlength')"
+                >
+                    Minimun 4 spaces
+                </div>
+            </div>
+            <div class="form-group ">
+                <input 
+                    type="text"
+                    name="twitter"
+                    placeholder="twitter"
+                    class="form-control"
+                    formControlName="twitter"
+                    autocomplete="off"
+                    (input)="handleChange()"
+                    [ngClass]="{
+                        'is-invalid': twitterField.errors && twitterField.dirty   ,
+                        'is-valid': twitterField.valid
+                        }"
+                >
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="twitterField.hasError('required')"
+                >
+                    Email is required
+                </div>
+                <div 
+                    class="invalid-feedback" 
+                    *ngIf="twitterField.hasError('minlength')"
+                >
+                    Minimun 4 spaces
+                </div>
+            </div>
+
+            <button 
+                class="btn btn-primary"
+                type="submit"
+                [disabled]="form.invalid"
+            >
+                {{isEditing ? 'Save Change' : 'Create'}}
+            </button>
+
+        </form>
+    </div>
+</div>
